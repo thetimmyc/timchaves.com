@@ -1,28 +1,42 @@
 import clsx from 'clsx'
 import Imgix from 'react-imgix'
+import * as fs from 'fs'
+import { useTheme } from '~/utils/theme-provider'
 
 interface Props {
   className?: string
   width?: number
   height?: number
+  darkAvailable?: boolean // this is not the most elegant way to do it, but I couldn't find a consistent way to just fall back if dark mode image wasn't available, both on Imgix and on self-hosted images (which could use fs, but was a bit ugly)
   src: string
   alt: string
 }
 
-const Img = ({ className, alt, src, ...otherProps }: Props) => {
-  const fileExt = src.split('.').pop()
-  const imgIsSvg = fileExt === 'svg' ? true : false
+const Img = ({
+  className,
+  alt,
+  src,
+  darkAvailable = false,
+  ...otherProps
+}: Props) => {
+  const [theme] = useTheme()
+  const imgIsSvg = src.split('.').pop() === 'svg' ? true : false
+  const finalSrc =
+    theme === 'dark' && darkAvailable
+      ? src.substring(0, src.length - 4) + '-dark.svg'
+      : src
 
   return (
     <div className={clsx('flex items-top justify-between', className)}>
+      {/* We are self-hosting SVGs */}
       {imgIsSvg ? (
-        <img alt={alt} src={src} {...otherProps} />
+        <img alt={alt} src={finalSrc} {...otherProps} />
       ) : (
         <Imgix
           htmlAttributes={{
             alt: alt,
           }}
-          src={src}
+          src={finalSrc}
           {...otherProps}
         />
       )}

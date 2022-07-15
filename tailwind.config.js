@@ -32,7 +32,7 @@ module.exports = {
         'background-1': {
           light: '#ffffff',
           DEFAULT: '#ffffff',
-          dark: '#2E303C',
+          dark: '#2A2B33',
         },
         'background-2': {
           light: '#ECECF1',

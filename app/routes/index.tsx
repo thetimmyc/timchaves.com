@@ -48,7 +48,6 @@ export let loader: LoaderFunction = async ({ request }) => {
     })
   )
 
-  console.log(process.env.MAILCHIMP_API_KEY)
   // Return all the posts frontMatter and slug as props
   return { posts }
 }
@@ -60,6 +59,18 @@ export default function Index() {
     <div>
       <Grid>
         <GridMainBody>
+          <picture>
+            <source
+              srcSet="https://timchaves.imgix.net/logo-hbs-dark.png"
+              media="(prefers-color-scheme: dark)"
+            />
+            <Imgix
+              htmlAttributes={{
+                alt: 'boo',
+              }}
+              src={'https://timchaves.imgix.net/logo-hbs.png'}
+            />
+          </picture>
           <H1 className="px-8 xl:px-0 text-center">
             Hi, there — I’m Tim.
             <br />

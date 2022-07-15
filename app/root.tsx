@@ -65,7 +65,7 @@ function App() {
         <Links />
         <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
       </head>
-      <body className="bg-background-1 dark:bg-background-1-dark transition duration-500">
+      <body className="bg-background-1 dark:bg-background-1-dark text-foreground-1 dark:text-foreground-1-dark transition duration-500">
         <Nav />
         <div className="px-5">
           <Outlet />

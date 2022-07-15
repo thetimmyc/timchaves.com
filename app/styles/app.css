@@ -423,6 +423,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus {
+  outline: 0;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+p a {
+  --tw-text-opacity: 1;
+  color: rgb(2 139 158 / var(--tw-text-opacity));
+}
+
 *, ::before, ::after {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -538,6 +555,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-12 {
   margin-top: 3rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .block {
@@ -670,6 +699,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   fill: #34d399;
 }
 
+.fill-foreground-1 {
+  fill: #292D36;
+}
+
 .fill-slate-900 {
   fill: #0f172a;
 }
@@ -707,6 +740,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .text-left {
@@ -758,6 +795,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: 0.005em;
 }
 
+.text-foreground-1 {
+  --tw-text-opacity: 1;
+  color: rgb(41 45 54 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -771,11 +813,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-rose-500 {
   --tw-text-opacity: 1;
   color: rgb(244 63 94 / var(--tw-text-opacity));
-}
-
-.text-foreground-1 {
-  --tw-text-opacity: 1;
-  color: rgb(41 45 54 / var(--tw-text-opacity));
 }
 
 .text-slate-900 {
@@ -809,57 +846,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-html {
-  -webkit-font-smoothing: antialiased;
-}
-
-:focus {
-  outline: 0;
-}
-
-p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-@media only screen and (min-width: 480px) {
-  p {
-    font-size: 1.125rem;
-  }
-}
-
-.spinner {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #fff;
-  border-bottom-color: transparent;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  -webkit-animation: spinnerRotation 1s linear infinite;
-          animation: spinnerRotation 1s linear infinite;
-}
-
-@-webkit-keyframes spinnerRotation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spinnerRotation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 /*** USE GOOGLE WEBFONTS HELPER TO GENERATE FONT FAMILIES ***/
@@ -929,11 +915,15 @@ p {
 
 .dark .dark\:bg-background-1-dark {
   --tw-bg-opacity: 1;
-  background-color: rgb(46 48 60 / var(--tw-bg-opacity));
+  background-color: rgb(42 43 51 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:fill-emerald-600 {
   fill: #059669;
+}
+
+.dark .dark\:fill-foreground-1-dark {
+  fill: #FFFFFF;
 }
 
 .dark .dark\:fill-white {
@@ -982,6 +972,11 @@ p {
   .sm\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .sm\:text-xl {

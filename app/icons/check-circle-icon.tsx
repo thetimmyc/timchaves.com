@@ -5,7 +5,13 @@ function CheckCircleIcon({
 }: { size?: number; className?: string } = {}) {
   return (
     <svg
-      className={clsx('fill-slate-900 dark:fill-white', className)}
+      className={clsx(
+        {
+          'fill-foreground-1 dark:fill-foreground-1-dark':
+            className && !className.includes('fill'),
+        },
+        className
+      )}
       width={size}
       height={size}
       clipRule="evenodd"
