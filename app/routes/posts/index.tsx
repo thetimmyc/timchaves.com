@@ -52,7 +52,7 @@ export default function Index() {
 
   return (
     <div>
-      <div className="grid grid-cols-12 gap-4 mx-auto w-full lg:w-[1140px] my-8">
+      <div>
         this is posts/index.tsx
         <div>
           <ul>

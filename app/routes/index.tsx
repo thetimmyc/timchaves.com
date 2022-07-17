@@ -59,25 +59,13 @@ export default function Index() {
     <div>
       <Grid>
         <GridMainBody>
-          <picture>
-            <source
-              srcSet="https://timchaves.imgix.net/logo-hbs-dark.png"
-              media="(prefers-color-scheme: dark)"
-            />
-            <Imgix
-              htmlAttributes={{
-                alt: 'boo',
-              }}
-              src={'https://timchaves.imgix.net/logo-hbs.png'}
-            />
-          </picture>
           <H1 className="px-8 xl:px-0 text-center">
             Hi, there — I’m Tim.
             <br />
             <br />
             I’m an entrepreneur, podcast host, and non-profit board member.
           </H1>
-          <EmailSubscribeBox className="mt-12" />
+          <EmailSubscribeBox id="subscribe" className="mt-12" />
           <ul>
             {data.posts.map((post: any, index: number) => (
               <li key={index}>

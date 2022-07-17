@@ -9,10 +9,11 @@ import AnimateHeight from 'react-animate-height'
 import { P } from './P'
 
 type Props = {
+  id?: string
   className: string
 }
 
-const EmailSubscribeBox = ({ className }: Props) => {
+const EmailSubscribeBox = ({ id, className }: Props) => {
   const fetcher = useFetcher()
   const ref = useRef<HTMLFormElement>(null)
 
@@ -28,6 +29,7 @@ const EmailSubscribeBox = ({ className }: Props) => {
 
   return (
     <div
+      id={id}
       className={clsx(
         className,
         `transition

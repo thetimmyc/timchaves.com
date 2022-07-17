@@ -20,19 +20,26 @@ const Img = ({
   ...otherProps
 }: Props) => {
   const [theme] = useTheme()
-  const imgIsSvg = src.split('.').pop() === 'svg' ? true : false
+  const fileExtension = src.split('.').pop()
+  const imgIsSvg = fileExtension === 'svg' ? true : false
   const finalSrc =
     theme === 'dark' && darkAvailable
-      ? src.substring(0, src.length - 4) + '-dark.svg'
+      ? src.substring(0, src.length - 4) + '-dark.' + fileExtension
       : src
 
   return (
     <div className={clsx('flex items-top justify-between', className)}>
       {/* We are self-hosting SVGs */}
       {imgIsSvg ? (
-        <img alt={alt} src={finalSrc} {...otherProps} />
+        <img
+          className={clsx(className)}
+          alt={alt}
+          src={finalSrc}
+          {...otherProps}
+        />
       ) : (
         <Imgix
+          className={clsx(className)}
           htmlAttributes={{
             alt: alt,
           }}

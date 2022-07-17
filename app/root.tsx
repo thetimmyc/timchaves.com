@@ -25,6 +25,7 @@ import {
 import { Nav } from '~/components/Nav'
 import styles from './styles/app.css'
 import { getThemeSession } from './utils/theme.server'
+import { Button } from './components/Button'
 
 export const links: LinksFunction = () => {
   return [{ rel: 'stylesheet', href: styles }]
@@ -69,6 +70,16 @@ function App() {
         <Nav />
         <div className="px-5">
           <Outlet />
+        </div>
+        <div className="text-center">
+          <div className=" text-foreground-3 dark:text-foreground-3-dark">
+            &copy; Tim Chaves {new Date().getFullYear()}.
+          </div>
+          <div className="mt-5">
+            <Button onClick={toggleTheme} size="small" variant="secondary">
+              {data.theme === 'dark' ? 'Light' : 'Dark'} mode
+            </Button>
+          </div>
         </div>
         <ScrollRestoration />
         <Scripts />

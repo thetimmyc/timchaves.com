@@ -1,20 +1,33 @@
 import clsx from 'clsx'
 
 interface Props {
-  type: 'button' | 'submit' | 'reset' | undefined
   loading?: boolean
   className?: string
   children?: React.ReactNode
+  variant?: null | 'secondary'
+  size?: null | 'small'
+  onClick?: React.MouseEventHandler
 }
 
-const Button = ({ type, loading, className, children }: Props) => {
+const Button = ({
+  loading,
+  className,
+  variant,
+  size,
+  onClick,
+  children,
+}: Props) => {
   return (
     <button
+      onClick={onClick}
       className={clsx(
         className,
-        'bg-teal-2 hover:bg-teal-1 active:bg-teal-3 text-white font-semibold text-sm px-4 h-11'
+        'font-semibold cursor-pointer',
+        variant === 'secondary'
+          ? 'border border-foreground-4 dark:border-background-4-dark bg-background-1 dark:bg-background-1-dark text-foreground-1 dark:text-foreground-1-dark'
+          : 'bg-teal-3 hover:bg-teal-2 active:bg-teal-4 text-white',
+        size === 'small' ? 'text-xs px-2 h-8' : 'text-sm px-4 h-11'
       )}
-      type={type}
     >
       {loading ? (
         <div className="flex items-center self-center">
