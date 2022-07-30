@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*** USE GOOGLE WEBFONTS HELPER TO GENERATE FONT FAMILIES ***/
+/* https://google-webfonts-helper.herokuapp.com/fonts/plus-jakarta-sans?subsets=latin
+
+/* plus-jakarta-sans-regular - latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/plus-jakarta-sans-v2-latin-regular.woff2') format('woff2');
+}
+
+/* plus-jakarta-sans-regular - latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/plus-jakarta-sans-v2-latin-600.woff2') format('woff2');
+}
+
+/* plus-jakarta-sans-700 - latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/plus-jakarta-sans-v2-latin-700.woff2') format('woff2');
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus {
+    outline: 0;
+  }
+
+  p {
+    @apply mb-5;
+  }
+
+  p a {
+    @apply text-teal-4 dark:text-teal-4-dark;
+  }
+
+  /* Article */
+  /* Note: There is a way to do this by customizing MDXProvider, but the ways I saw people doing this in Remix seemed quite hacky, so here we are. */
+
+  .article p {
+    @apply text-base sm:text-lg;
+    @apply leading-relaxed;
+    @apply mb-8;
+  }
+
+  .article h2 {
+    @apply text-xl sm:text-2xl;
+    @apply font-bold;
+    @apply mt-9 mb-3 sm:mb-4;
+  }
+
+  .article blockquote {
+    @apply border-l-2 border-teal-1 dark:border-teal-1-dark;
+    @apply text-foreground-3 dark:text-foreground-3-dark;
+    @apply px-5;
+    @apply mb-8;
+  }
+
+  .article blockquote p {
+    @apply mt-0 mb-4;
+  }
+
+  .article iframe {
+    @apply mb-8;
+  }
+}

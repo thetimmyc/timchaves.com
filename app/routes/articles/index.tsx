@@ -27,7 +27,7 @@ export default function Index() {
             key={index}
             className="mb-10 sm:mb-12 border-b border-background-3 last:border-0 dark:border-background-3-dark"
           >
-            <Link prefetch="intent" to={`articles/${article.slug}`}>
+            <Link prefetch="intent" to={`/articles/${article.slug}`}>
               <ArticleHeader article={article} />
             </Link>
           </div>

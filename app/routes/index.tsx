@@ -1,7 +1,4 @@
 import type { LoaderFunction } from '@remix-run/node'
-import * as fs from 'fs'
-import * as path from 'path'
-import matter from 'gray-matter'
 import { Link, useLoaderData } from '@remix-run/react'
 import { EmailSubscribeBox } from '~/components/EmailSubscribeBox'
 import { Grid } from '~/components/Grid'
@@ -39,7 +36,7 @@ export default function Index() {
               key={index}
               className="mb-10 sm:mb-12 border-b border-background-3 last:border-0 dark:border-background-3-dark"
             >
-              <Link prefetch="intent" to={`articles/${article.slug}`}>
+              <Link prefetch="intent" to={`/articles/${article.slug}`}>
                 <ArticleHeader article={article} />
               </Link>
             </div>
