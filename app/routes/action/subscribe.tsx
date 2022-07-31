@@ -14,7 +14,6 @@ export const action: ActionFunction = async ({ request }) => {
   const mailchimpListId = process.env.MAILCHIMP_LIST_ID_PRIMARY
   const mailchimpApi = 'https://us19.api.mailchimp.com/3.0'
 
-  return json({ ok: true })
   try {
     const response: Response = await fetch(
       `${mailchimpApi}/lists/${mailchimpListId}/members`,

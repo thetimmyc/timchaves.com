@@ -57,15 +57,10 @@ const EmailSubscribeBox = ({ id, className }: Props) => {
                   placeholder="Email address"
                   name="email"
                   required={true}
-                  defaultValue="t@t.com"
-                  // value={email}
-                  // onChange={handleChange}
-                  // aria-invalid={
-                  //   Boolean(actionData?.fieldErrors?.email) || undefined
-                  // }
-                  // aria-errormessage={
-                  //   actionData?.fieldErrors?.email ? 'email-error' : undefined
-                  // }
+                  aria-invalid={Boolean(fetcher.data?.error) || undefined}
+                  aria-errormessage={
+                    fetcher.data?.error ? 'email-error' : undefined
+                  }
                 />
               </label>
               <Button className="w-16" loading={fetcher.state === 'submitting'}>
