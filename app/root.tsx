@@ -42,6 +42,7 @@ export type LoaderData = {
 }
 
 export const loader: LoaderFunction = async ({ request }) => {
+  console.log('also here too')
   const themeSession = await getThemeSession(request)
 
   const data: LoaderData = {

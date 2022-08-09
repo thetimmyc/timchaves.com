@@ -6,6 +6,11 @@ import Imgix from 'react-imgix'
 import { H1 } from '~/components/H1'
 import { Project } from '~/components/Project'
 import { Link } from '@remix-run/react'
+import type { MetaFunction } from '@remix-run/node'
+
+export const meta: MetaFunction = () => ({
+  heynow: 'boo',
+})
 
 const About = () => {
   return (

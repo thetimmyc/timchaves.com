@@ -21,14 +21,6 @@ async function loadArticles() {
         slug: file.split('.')[0],
       }
 
-      // console.log(
-      //   article.frontMatter.meta.title,
-      //   article.frontMatter.meta.datePublished,
-      //   typeof article.frontMatter.meta.datePublished
-      // )
-
-      // article.frontMatter.meta.datePublished += ' MST'
-      // console.log(article)
       return article
     })
   )
@@ -43,4 +35,29 @@ async function loadArticles() {
   return articles
 }
 
-export { loadArticles }
+async function loadArticle(slug: string) {
+  const mdWithData = fs.readFileSync(
+    `./app/routes/articles/__article/${slug}.mdx`,
+    'utf-8'
+  )
+
+  const { data: frontMatter } = matter(mdWithData)
+
+  const article = {
+    frontMatter: frontMatter,
+    slug: slug,
+  }
+  return article
+}
+
+function getArticlePathItems(requestUrl: string) {
+  const pathItems = new URL(requestUrl).pathname.match(/[^\/]+/g)
+  return pathItems || []
+}
+
+function getArticleSlug(requestUrl: string) {
+  const pathItems = getArticlePathItems(requestUrl)
+  return pathItems.length === 2 ? pathItems[1] : ''
+}
+
+export { loadArticles, loadArticle, getArticlePathItems, getArticleSlug }

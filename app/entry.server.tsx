@@ -9,6 +9,7 @@ export default function handleRequest(
   remixContext: EntryContext
 ) {
   console.log('always here')
+  
   let markup = renderToString(
     <RemixServer context={remixContext} url={request.url} />
   )
