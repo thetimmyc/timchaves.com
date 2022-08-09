@@ -1,11 +1,6 @@
 import type { LoaderFunction, MetaFunction } from '@remix-run/node'
-import { Outlet, useLoaderData } from '@remix-run/react'
-import * as fs from 'fs'
-import matter from 'gray-matter'
-import type { Article } from '~/types'
+import { Outlet } from '@remix-run/react'
 import { loadArticle, getArticlePathItems } from '~/utils/articles'
-
-type LoaderData = Article
 
 // Weird but for articles, we have to set meta here. We can't do it in the __article.tsx layout route
 // So because we want article data here, we have to load it. Originally, I tried loading the article here ONLY --
@@ -19,7 +14,11 @@ export const meta: MetaFunction = ({ data }) => {
   // If this file called on an article slug, an article has been loaded and passed to this MetaFunction. Otherwise, we don't have any loader data to set the meta
   if (data) {
     return {
-      'og:image': data.frontMatter.meta.ogImageSrc,
+      'og:title': data.article.frontMatter.meta.title,
+      'og:image': data.article.frontMatter.meta.ogImageSrc,
+      'og:url': data.requestUrl,
+      'og:type': 'article',
+      'og:description': data.article.frontMatter.meta.description,
     }
   } else {
     return {
@@ -34,7 +33,10 @@ export const loader: LoaderFunction = async ({ request }) => {
   if (pathItems.length !== 2 && pathItems[0] === 'articles') {
     return null
   } else {
-    return loadArticle(pathItems[1])
+    return {
+      article: await loadArticle(pathItems[1]),
+      requestUrl: request.url,
+    }
   }
 }
 

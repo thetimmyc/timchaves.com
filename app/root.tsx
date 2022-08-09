@@ -3,12 +3,14 @@ import type {
   LoaderFunction,
   MetaFunction,
 } from '@remix-run/node'
+import { redirect } from '@remix-run/node'
 import { Theme } from '~/utils/theme-provider'
 import {
   NonFlashOfWrongThemeEls,
   ThemeProvider,
   useTheme,
 } from '~/utils/theme-provider'
+import * as fs from 'fs'
 
 import clsx from 'clsx'
 
@@ -42,7 +44,6 @@ export type LoaderData = {
 }
 
 export const loader: LoaderFunction = async ({ request }) => {
-  console.log('also here too')
   const themeSession = await getThemeSession(request)
 
   const data: LoaderData = {
