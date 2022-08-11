@@ -24,7 +24,6 @@ import {
 } from '@remix-run/react'
 
 import { Nav } from '~/components/Nav'
-import { HeadTags } from '~/components/HeadTags'
 import styles from './styles/app.css'
 import { getThemeSession } from './utils/theme.server'
 import { Button } from './components/Button'
@@ -67,9 +66,32 @@ function App() {
         <Meta />
         <Links />
         <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
-        <HeadTags />
       </head>
+
       <body className="bg-background-1 dark:bg-background-1-dark text-foreground-1 dark:text-foreground-1-dark transition duration-500">
+        {process.env.NODE_ENV === 'development' ? null : (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=G-58K2PGXCWX`}
+            />
+            <script
+              async
+              id="gtag-init"
+              dangerouslySetInnerHTML={{
+                __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-58K2PGXCWX', {
+                  page_path: window.location.pathname,
+                });
+              `,
+              }}
+            />
+          </>
+        )}
         <Nav />
         <div className="px-5">
           <Outlet />
