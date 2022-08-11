@@ -412,6 +412,8 @@ video {
 
 html {
   -webkit-font-smoothing: antialiased;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 :focus {

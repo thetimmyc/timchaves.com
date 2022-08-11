@@ -8,7 +8,7 @@ interface Props {
 
 const P = ({ className, size = 'base', children }: Props) => {
   const classSet = {
-    small: 'text-sm sm:text-base',
+    small: 'text-base sm:text-base',
     base: 'text-base sm:text-lg',
     large: 'text-lg sm:text-xl tracking-wide',
   }

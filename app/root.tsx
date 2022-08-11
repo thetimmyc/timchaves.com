@@ -3,7 +3,6 @@ import type {
   LoaderFunction,
   MetaFunction,
 } from '@remix-run/node'
-import { redirect } from '@remix-run/node'
 import { Theme } from '~/utils/theme-provider'
 import {
   NonFlashOfWrongThemeEls,
@@ -25,6 +24,7 @@ import {
 } from '@remix-run/react'
 
 import { Nav } from '~/components/Nav'
+import { HeadTags } from '~/components/HeadTags'
 import styles from './styles/app.css'
 import { getThemeSession } from './utils/theme.server'
 import { Button } from './components/Button'
@@ -67,6 +67,7 @@ function App() {
         <Meta />
         <Links />
         <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
+        <HeadTags />
       </head>
       <body className="bg-background-1 dark:bg-background-1-dark text-foreground-1 dark:text-foreground-1-dark transition duration-500">
         <Nav />
