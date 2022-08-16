@@ -1,4 +1,3 @@
-import { Outlet } from '@remix-run/react'
 import { P } from '~/components/P'
 import { Grid } from '~/components/Grid'
 import { GridMainBody } from '~/components/GridMainBody'

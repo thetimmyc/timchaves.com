@@ -28,7 +28,23 @@ export default function Index() {
             Hi, there — I’m Tim.
             <br />
             <br />
-            I’m an entrepreneur, podcast host, and non-profit board member.
+            I’m an entrepreneur,&nbsp;
+            <a
+              target="_blank"
+              href="https://podcasts.apple.com/us/podcast/faith-matters/id1307757928"
+              rel="noreferrer"
+            >
+              podcast host
+            </a>
+            , and&nbsp;
+            <a
+              target="_blank"
+              href="https://faithmatters.org/about/"
+              rel="noreferrer"
+            >
+              non-profit board member
+            </a>
+            .
           </H1>
           <EmailSubscribeBox id="subscribe" className="mt-12 mb-12" />
           {data.articles.map((article: Article, index: number) => (

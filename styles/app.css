@@ -44,17 +44,47 @@
     @apply mb-5;
   }
 
-  p a {
+  h5 {
+    @apply font-bold;
+    @apply text-sm sm:text-base;
+    @apply leading-relaxed;
+    @apply mb-8;
+  }
+
+  p a,
+  h1 a {
     @apply text-teal-4 dark:text-teal-4-dark;
   }
 
   /* Article */
   /* Note: There is a way to do this by customizing MDXProvider, but the ways I saw people doing this in Remix seemed quite hacky, so here we are. */
 
-  .article p {
+  .article p,
+  .article ol li,
+  .article ul li {
     @apply text-base sm:text-lg;
     @apply leading-relaxed;
     @apply mb-8;
+  }
+
+  .article ol li,
+  .article ul li {
+    @apply ml-5;
+    @apply pl-2;
+  }
+
+  .article ol {
+    @apply list-decimal;
+  }
+
+  .article ol ::marker {
+    @apply normal-nums;
+    @apply font-bold;
+    @apply mr-2;
+  }
+
+  .article ul {
+    @apply list-disc;
   }
 
   .article h2 {

@@ -10,10 +10,11 @@ import { P } from './P'
 
 type Props = {
   id?: string
-  className: string
+  className?: string
+  children?: React.ReactNode
 }
 
-const EmailSubscribeBox = ({ id, className }: Props) => {
+const EmailSubscribeBox = ({ id, className, children }: Props) => {
   const fetcher = useFetcher()
   const ref = useRef<HTMLFormElement>(null)
 
@@ -39,14 +40,20 @@ const EmailSubscribeBox = ({ id, className }: Props) => {
       )}
     >
       <div>
-        <P>
-          I write a newsletter, often with ideas about Latter-day Saint faith,
-          or how we can become the best versions of ourselves.
-        </P>
-        <P>
-          It’s free, and I’ll never share your email. You can unsubscribe any
-          time.
-        </P>
+        {children ? (
+          children
+        ) : (
+          <>
+            <P>
+              I write a newsletter, often with ideas about Latter-day Saint
+              faith, or how we can become the best versions of ourselves.
+            </P>
+            <P>
+              It’s free, and I’ll never share your email. You can unsubscribe
+              any time.
+            </P>
+          </>
+        )}
         <div>
           <fetcher.Form ref={ref} method="post" action="/action/subscribe">
             <div className="flex flex-row items-center gap-x-3">
