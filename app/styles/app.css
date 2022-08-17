@@ -849,12 +849,12 @@ p a,
   height: 4rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-0 {
   height: 0px;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-10 {
@@ -875,6 +875,18 @@ p a,
 
 .w-auto {
   width: auto;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
+.w-20 {
+  width: 5rem;
 }
 
 .grow {
@@ -1000,14 +1012,6 @@ p a,
   fill: #0f172a;
 }
 
-.p-\[5px\] {
-  padding: 5px;
-}
-
-.p-\[56\.25\%\] {
-  padding: 56.25%;
-}
-
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -1052,12 +1056,12 @@ p a,
   padding-bottom: 2rem;
 }
 
-.pt-8 {
-  padding-top: 2rem;
-}
-
 .pb-\[56\.25\%\] {
   padding-bottom: 56.25%;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .text-left {
