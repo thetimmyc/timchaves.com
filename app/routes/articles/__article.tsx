@@ -26,7 +26,7 @@ const __Article = () => {
         <div className="article">
           <Outlet />
         </div>
-        <div className="border-t border-background-3 dark:border-background-3-dark pt-8">
+        <div className="border-t border-background-3 dark:border-background-3-dark mt-8 pt-8">
           <div className="flex items-center mb-4">
             <Img
               width={299}
