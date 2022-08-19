@@ -6,7 +6,7 @@ interface Props {
 
 const Sig = ({ children }: Props) => {
   return (
-    <>
+    <div class="mb-8">
       <p>{children ? children : 'Thanks so much for reading,'}</p>
       <Img
         src="https://timchaves.imgix.net/tim-sig.png"
@@ -17,7 +17,7 @@ const Sig = ({ children }: Props) => {
         className="w-16"
       />
       {children}
-    </>
+    </div>
   )
 }
 export { Sig }
