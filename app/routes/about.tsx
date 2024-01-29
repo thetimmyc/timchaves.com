@@ -54,7 +54,7 @@ const About = () => {
           <Project
             imgSrc="/images/logo-jump.svg"
             imgAlt="Jump logo"
-            imgClassName="h-10 w-auto"
+            imgClassName="h-8 w-auto"
             imgDarkAvailable={true}
             dates="2023&ndash;present"
           >
@@ -76,7 +76,7 @@ const About = () => {
           <Project
             imgSrc="/images/logo-faith-matters.svg"
             imgAlt="Faith Matters logo"
-            imgClassName="h-8 w-auto"
+            imgClassName="h-6 w-auto"
             imgDarkAvailable={true}
             dates="2018&ndash;present"
           >
