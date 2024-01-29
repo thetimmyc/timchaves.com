@@ -1,10 +1,17 @@
-import { P } from '~/components/P'
-import { Grid } from '~/components/Grid'
-import { GridMainBody } from '~/components/GridMainBody'
-import Imgix from 'react-imgix'
-import { H1 } from '~/components/H1'
-import { Project } from '~/components/Project'
-import { Link } from '@remix-run/react'
+import { P } from "~/components/P";
+import { Grid } from "~/components/Grid";
+import { GridMainBody } from "~/components/GridMainBody";
+import Imgix from "react-imgix";
+import { H1 } from "~/components/H1";
+import { Project } from "~/components/Project";
+import { Link } from "@remix-run/react";
+import { MetaFunction } from "@remix-run/node";
+
+export const meta: MetaFunction = () => ({
+  charset: "utf-8",
+  title: "About - Tim Chaves",
+  viewport: "width=device-width,initial-scale=1",
+});
 
 const About = () => {
   return (
@@ -19,14 +26,16 @@ const About = () => {
           />
         </div>
         <P size="large">
-          I’m an entrepreneur currently exploring the worlds of faith,
-          technology, and philosophy. I graduated from Brigham Young University
-          in 2008 and Harvard Business School in 2015.
+          I’m an entrepreneur currently exploring the worlds of technology,
+          faith, and philosophy. I graduated from Brigham Young University in
+          2008 and Harvard Business School in 2015.
         </P>
         <P size="large">
-          I sit on the board of the non-profit{' '}
+          I'm the co-founder of AI startup{" "}
+          <a href="https://jumpapp.com">Jump</a>, and sit on the board of the
+          non-profit{" "}
           <a href="https://faithmatters.org/">Faith Matters Foundation</a> and
-          co-host its{' '}
+          co-host its{" "}
           <a href="https://podcasts.apple.com/us/podcast/faith-matters/id1307757928">
             podcast
           </a>
@@ -34,7 +43,7 @@ const About = () => {
         </P>
         <P size="large">
           I have a background in design and software engineering, and had way
-          too much fun designing and building this website by hand, using{' '}
+          too much fun designing and building this website by hand, using{" "}
           <a href="https://www.figma.com/">Figma</a>&nbsp;and&nbsp;
           <a href="https://remix.run/">Remix</a>. Its code is open source and
           available on&nbsp;
@@ -43,19 +52,37 @@ const About = () => {
         <div>
           <H1 className="mt-16 mb-12 text-center">Recent work</H1>
           <Project
+            imgSrc="/images/logo-jump.svg"
+            imgAlt="Jump logo"
+            imgClassName="h-10 w-auto"
+            imgDarkAvailable={true}
+            dates="2023&ndash;present"
+          >
+            <P size="small">
+              Jump is an AI copilot for sales teams. It's meant to automate the
+              75% of the day that sales reps spend on non-selling activities and
+              give sales leaders much greater insight into their team's
+              performance.
+            </P>
+            <P size="small">
+              Along with a <a href="https://jumpapp.com/company">great team</a>,
+              I co-founded the company in early 2023.
+            </P>
+            <P size="small">
+              <a href="https://jumpapp.com">Visit Jump website</a>
+            </P>
+          </Project>
+
+          <Project
             imgSrc="/images/logo-faith-matters.svg"
             imgAlt="Faith Matters logo"
+            imgClassName="h-8 w-auto"
             imgDarkAvailable={true}
             dates="2018&ndash;present"
           >
             <P size="small">
               Faith Matters is a platform and community for exploring life’s
               most important questions through the lens of Mormonism.
-            </P>
-            <P size="small">
-              It has been an important way for me to stay engaged in a faith
-              community full of remarkable people despite my own failings and
-              periods of disillusionment.
             </P>
             <P size="small">
               Faith Matters publishes a&nbsp;
@@ -68,16 +95,11 @@ const About = () => {
               </a>
               &nbsp;and&nbsp;
               <a href="https://transformationsoffaith.org">one online course</a>
-              , and holds{' '}
+              , and holds{" "}
               <a href="https://faithmatters.org/restore">
                 in-person gatherings
               </a>
               . Much more will be coming in the months and years ahead.
-            </P>
-            <P size="small">
-              Those I get to work with — including my wife, Aubrey, our fellow
-              board members and executives, and Faith Matters advisors — are
-              among the people I look up to most.
             </P>
             <P size="small">
               <a href="https://faithmatters.org">Visit Faith Matters website</a>
@@ -89,7 +111,7 @@ const About = () => {
               lately have been finding time to write more.
             </P>
             <P size="small">
-              I send an email out to subscribers when I write a new article.{' '}
+              I send an email out to subscribers when I write a new article.{" "}
               {/* Todo: Audio, part two? */}
             </P>
             <P size="small">
@@ -103,12 +125,13 @@ const About = () => {
             dates="2015&ndash;2020"
           >
             <P size="small">
-              ZipBooks is online, small business accounting software. I founded
+              ZipBooks is online small business accounting software. I founded
               the company with a great team of people in 2015 and served as CEO.
             </P>
             <P size="small">
-              ZipBooks was acquired in 2019 and I worked for the acquiring
-              company until 2020.
+              ZipBooks was acquired by expense management platform Divvy in
+              2019, where I worked until 2020 (Divvy was subsequently acquired
+              by Bill.com).
             </P>
             <P size="small">
               <a href="https://zipbooks.com">Visit ZipBooks website</a>
@@ -164,7 +187,7 @@ const About = () => {
         </div>
       </GridMainBody>
     </Grid>
-  )
-}
+  );
+};
 
-export default About
+export default About;
