@@ -38,8 +38,8 @@ const __Article = () => {
             <h5 className="mb-0">About the author</h5>
           </div>
           <P size="small">
-            I’m an entrepreneur currently exploring the worlds of faith,
-            technology, and philosophy. I graduated from Brigham Young
+            I’m an entrepreneur currently exploring the worlds of faith and
+            technology. I graduated from Brigham Young
             University in 2008 and Harvard Business School in 2015.
           </P>
           <P size="small">

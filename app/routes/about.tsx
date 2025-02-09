@@ -27,7 +27,7 @@ const About = () => {
         </div>
         <P size="large">
           I’m an entrepreneur currently exploring the worlds of technology,
-          faith, and philosophy. I graduated from Brigham Young University in
+          and faith. I graduated from Brigham Young University in
           2008 and Harvard Business School in 2015.
         </P>
         <P size="large">
@@ -59,10 +59,7 @@ const About = () => {
             dates="2023&ndash;present"
           >
             <P size="small">
-              Jump is an AI copilot for sales teams. It's meant to automate the
-              75% of the day that sales reps spend on non-selling activities and
-              give sales leaders much greater insight into their team's
-              performance.
+              As of February 2025, Jump is Series A stage tech startup that has built an AI assistant for financial advisors. It's intended to allow financial advisors and their clients to thrive in the age of AI, automating administrative work for advisors so they can focus on building relationships with clients as they make some of the most important decisions of their lives.
             </P>
             <P size="small">
               Along with a <a href="https://jumpapp.com/company">great team</a>,
