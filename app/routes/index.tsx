@@ -28,7 +28,7 @@ export default function Index() {
             Hi, there — I’m Tim.
             <br />
             <br />
-            I’m an entrepreneur,&nbsp;
+            I’m an <a href="https://jumpapp.com" target="_blank" rel="noreferrer">entrepreneur</a>,&nbsp;
             <a
               target="_blank"
               href="https://podcasts.apple.com/us/podcast/faith-matters/id1307757928"
