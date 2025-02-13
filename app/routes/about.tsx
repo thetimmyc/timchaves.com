@@ -32,7 +32,7 @@ const About = () => {
         </P>
         <P size="large">
           I'm the co-founder of AI startup{" "}
-          <a href="https://jumpapp.com">Jump</a>, and sit on the board of the
+          <a href="https://jumpapp.com">Jump</a>, sit on the board of the
           non-profit{" "}
           <a href="https://faithmatters.org/">Faith Matters Foundation</a> and
           co-host its{" "}
